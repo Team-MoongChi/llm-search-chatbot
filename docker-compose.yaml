@@ -1,0 +1,24 @@
+services:
+  mongo:
+    container_name: llm-search-chatbot-mongo
+    image: mongodb/mongodb-community-server
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
+    ports:
+      - '27017:27017'
+    volumes:
+      - llm-search-chatbot-mongo:/data/db
+    networks:
+      - llm-search-chatbot-network
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+
+volumes:
+  llm-search-chatbot-mongo:
+    driver: local
+
+networks:
+  llm-search-chatbot-network:
+    driver: bridge
