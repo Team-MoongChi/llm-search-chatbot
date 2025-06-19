@@ -24,6 +24,6 @@ This project is about Moongchi's Shopping LLM Search Chatbot.
   ```
 - **Fifth. Execute Uv Pip Command for Python Package Install**
   ```shell
-  uv pip install -r requriements.txt
+  uv pip install -r requirements.txt
   ```
 - **Setup is Done!**
